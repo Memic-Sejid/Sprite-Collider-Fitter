@@ -5,6 +5,7 @@
   "description": "Editor tool that replaces a sprite's polygon collider with a few fitted circles, rotated boxes and capsules within an error tolerance.",
   "unity": "2022.3",
   "license": "MIT",
+  "documentationUrl": "https://github.com/Memic-Sejid/Sprite-Collider-Fitter/blob/main/Packages/com.sejidmemic.sprite-collider-fitter/README.md",
   "author": {
     "name": "SejidMemic"
   },
