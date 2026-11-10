@@ -1,0 +1,20 @@
+{
+    "name": "SpriteFit.Benchmark.Editor",
+    "rootNamespace": "SpriteFit.Benchmark",
+    "references": [
+        "SpriteFit.Core",
+        "SpriteFit.Editor",
+        "Unity.Mathematics"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

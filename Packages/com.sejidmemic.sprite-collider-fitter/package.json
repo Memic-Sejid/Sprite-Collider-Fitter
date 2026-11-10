@@ -1,0 +1,31 @@
+{
+  "name": "com.sejidmemic.sprite-collider-fitter",
+  "version": "0.1.0",
+  "displayName": "Sprite Primitive Collider Fitter",
+  "description": "Editor tool that replaces a sprite's polygon collider with a few fitted circles, rotated boxes and capsules within an error tolerance.",
+  "unity": "2022.3",
+  "license": "MIT",
+  "author": {
+    "name": "SejidMemic"
+  },
+  "keywords": [
+    "2d",
+    "sprite",
+    "collider",
+    "physics",
+    "editor"
+  ],
+  "dependencies": {
+    "com.unity.burst": "1.8.21",
+    "com.unity.mathematics": "1.2.6",
+    "com.unity.modules.imgui": "1.0.0",
+    "com.unity.modules.physics2d": "1.0.0"
+  },
+  "samples": [
+    {
+      "displayName": "Sample Sprites",
+      "description": "Four sprites (barrel, shuriken, spaceship, sword) with polygon colliders in a scene, to try the fitter on.",
+      "path": "Samples~/SampleSprites"
+    }
+  ]
+}
