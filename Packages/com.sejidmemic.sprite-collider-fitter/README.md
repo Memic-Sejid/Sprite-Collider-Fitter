@@ -43,16 +43,16 @@ To try it on known sprites first, open the package in **Package Manager**, expan
 
 ## Benchmark
 
-1,000 dynamic bodies of the four sample sprites fall into a container: 250 each of a barrel, a shuriken, a spaceship and a sword. 600 physics steps are timed. Unity 2022.3.62f3 in the Editor, Intel Core Ultra 7 265K.
+1,000 dynamic bodies of the four sample sprites fall into a container: 250 each of a barrel, a shuriken, a spaceship and a sword. 600 physics steps are timed. Unity 2022.3.62f3 and Unity 6.6 (6000.6.8f1), Intel Core Ultra 7 265K; each figure is the mean of three runs. The table shows the average step, with the 95th percentile in brackets.
 
-| Colliders | Physics shapes | Average step | 95th percentile |
+| Colliders | Physics shapes | Unity 2022.3 | Unity 6.6 |
 | --- | ---: | ---: | ---: |
-| `PolygonCollider2D` (sprite physics shape) | 11,471 | 21.2 ms | 37.7 ms |
-| Fitted primitives, up to 4 (default) | 3,750 | 4.0 ms | 6.0 ms |
-| Fitted primitives, up to 8 | 7,250 | 9.2 ms | 16.2 ms |
-| One bounding box | 1,000 | 2.2 ms | 2.6 ms |
+| `PolygonCollider2D` (sprite physics shape) | 11,471 (Unity 6.6: 11,276) | 20.8 ms (38.3 ms) | 13.1 ms (25.2 ms) |
+| Fitted primitives, up to 4 (default) | 3,750 | 3.9 ms (5.8 ms) | 3.7 ms (5.5 ms) |
+| Fitted primitives, up to 8 | 7,250 | 9.0 ms (15.3 ms) | 8.9 ms (15.3 ms) |
+| One bounding box | 1,000 | 2.2 ms (2.7 ms) | 2.1 ms (2.5 ms) |
 
-Accuracy is overfill, the share of empty pixels a collider covers. Underfill was 0% for every variant except the spaceship's polygon (0.2%).
+Accuracy is the same in both versions. It is overfill, the share of empty pixels a collider covers. Underfill was 0% for every variant except the spaceship's polygon (0.2%).
 
 | Sprite | Polygon | Fitted, up to 4 | Fitted, up to 8 | Bounding box |
 | --- | ---: | ---: | ---: | ---: |
@@ -61,7 +61,7 @@ Accuracy is overfill, the share of empty pixels a collider covers. Underfill was
 | Spaceship | 9.3% | 32.9% (4 boxes) | 23.0% (2 capsules, 6 boxes) | 149.5% |
 | Sword | 77.2% | 21.3% (1 capsule, 2 boxes) | 13.0% (1 circle, 4 boxes) | 284.8% |
 
-With the default 4 primitives, physics steps are about 5× faster than with Unity's generated polygons; with up to 8, about 2.3× faster. On solid shapes like the barrel and the sword the fit is about as tight as the polygon or tighter; Unity's generated outline for the sword, a simplified 16-vertex polygon, covers 77% extra. On thin, curved features, the shuriken's blades and the spaceship's wings, the fit leaves more empty space than the polygon, because every primitive fully encloses its pixels (see [Limitations](#limitations)).
+With the default 4 primitives, physics steps are about 5× faster than with Unity's generated polygons in Unity 2022.3, and about 3.5× faster in Unity 6.6, which steps polygons faster; with up to 8, about 2.3× and 1.5× faster. On solid shapes like the barrel and the sword the fit is about as tight as the polygon or tighter; Unity's generated outline for the sword, a simplified 16-vertex polygon, covers 77% extra. On thin, curved features, the shuriken's blades and the spaceship's wings, the fit leaves more empty space than the polygon, because every primitive fully encloses its pixels (see [Limitations](#limitations)).
 
 The benchmark isn't part of the package. It's in the development project in the [GitHub repository](https://github.com/Memic-Sejid/Sprite-Collider-Fitter), under `Assets/SpriteFitBenchmark`: clone the repository, open it in Unity and run **Tools → Sprite Collider Fitter → Benchmark → Run**. It runs in a preview scene, so it doesn't touch your open scenes or physics settings.
 

@@ -4,7 +4,7 @@
 
 # Sprite Primitive Collider Fitter
 
-A Unity editor tool that replaces a sprite's polygon collider with a few fitted circles, rotated boxes and capsules, within an error tolerance. In the benchmark, 1,000 falling bodies step **5× faster** with the default fit than with Unity's generated polygons. On solid shapes the fit is as tight as those polygons or tighter; on thin, curved features it leaves more empty space.
+A Unity editor tool that replaces a sprite's polygon collider with a few fitted circles, rotated boxes and capsules, within an error tolerance. In the benchmark, 1,000 falling bodies step **5× faster** with the default fit than with Unity's generated polygons in Unity 2022.3, and **3.5× faster** in Unity 6.6. On solid shapes the fit is as tight as those polygons or tighter; on thin, curved features it leaves more empty space.
 
 The package, its documentation, the benchmark tables and the algorithm notes are in [`Packages/com.sejidmemic.sprite-collider-fitter`](Packages/com.sejidmemic.sprite-collider-fitter/README.md).
 
