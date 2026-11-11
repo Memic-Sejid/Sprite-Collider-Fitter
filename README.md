@@ -1,3 +1,7 @@
+<p align="center">
+  <img src=".github/sprite-collider-fitter-logo.png" alt="Sprite Collider Fitter logo: a circle, a rotated box and a capsule outlined in green" width="720">
+</p>
+
 # Sprite Primitive Collider Fitter
 
 A Unity editor tool that replaces a sprite's polygon collider with a few fitted circles, rotated boxes and capsules, within an error tolerance. In the benchmark, 1,000 falling bodies step **5× faster** with the default fit than with Unity's generated polygons. On solid shapes the fit is as tight as those polygons or tighter; on thin, curved features it leaves more empty space.
